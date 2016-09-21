@@ -1,6 +1,7 @@
 html, body {
 	height: 100%;
 	margin:0px;
+	min-width:250px;
 }
 
 body {
@@ -30,15 +31,13 @@ footer{
 }
 
 .logo {
-	text-align: right;
-	width: 363px;
-	margin-top: 5px;
+	margin-top: 12px;
 }
 
 .logo-title {
 	font-family: 'Oswald', sans-serif;
 	color: white;
-	font-size: 36px;
+	font-size: 28px;
 }
 
 .logo-subTitle {
@@ -47,6 +46,15 @@ footer{
 	color: #979797;
 	position: relative;
 	top: -8px
+}
+
+@media (max-width: 400px) {
+	.logo-title {
+		font-size: 16px;
+	}
+	.logo-subTitle {
+		top: 0px
+	}
 }
 
 .header {
@@ -92,8 +100,24 @@ p {
 	padding:0;
 	font-family:'Cutive Mono', serif;
 	text-transform: none;
+	word-break:break-all;
 }
 
 .main-content .main-row{
 	margin-top:20px;
+}
+
+.comic{
+	padding:10px;
+}
+
+select.form-control{
+	display: inline-block;
+	width:auto;
+	margin:5px 0px;
+}
+
+.comic-column{
+	text-align: center;
+	font-size: 12px;
 }

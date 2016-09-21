@@ -19,25 +19,26 @@
 </head>
 
 <body>
-
 	<div class="container-fluid header">
 		<div class="container">
 			<header class="row">
-				<div class="logo">
-					<div class="logo-title">PASSWORD GENERATOR</div>
-					<div class="logo-subTitle">INSPIRED BY THE XKCD</div>
+				<div class="col-sm-12">
+					<div class="logo">
+						<div class="logo-title">XKCD PASSWORD GENERATOR</div>
+						<div class="logo-subTitle">INSPIRED BY THE XKCD WEBCOMIC</div>
+					</div>
 				</div>
+
 			</header>
 		</div>
 	</div>
-
 	<div class="container-fluid">
 		<main class="container main-content">
 			<div class="row main-row">
 				<div class="col-sm-12">
 					
-					<? if($errorMessage && $errorMessage.length): ?>
-						<div class="alert alert-danger" role="alert"> <strong>Error</strong> <?= implode('<br /><strong>Error</strong> ', $errorMessage) ?></div>
+					<? if($errors && $errors.length): ?>
+						<div class="alert alert-danger" role="alert"> <strong>Error</strong> <?= implode('<br /><strong>Error</strong> ', $errors) ?></div>
 					<? endif ?>
 
 					<div class='password-holder'>
@@ -46,7 +47,6 @@
 					
 					<form method="GET" action="?">
 						<div class="form-group">
-							<label>
 							<select name="numberOfWords" class="form-control">
 								<option value="1" <?= $numberOfWords === 1 ? 'selected' : '' ?>>1 word</option>
 								<option value="2" <?= $numberOfWords === 2 ? 'selected' : '' ?>>2 words</option>
@@ -58,7 +58,20 @@
 								<option value="8" <?= $numberOfWords === 8 ? 'selected' : '' ?>>8 words</option>
 								<option value="9" <?= $numberOfWords === 9 ? 'selected' : '' ?>>9 words</option>
 							</select>
-							</label>
+
+							<select name="delimiter" class="form-control">
+								<option value="hyphen" <?= $delimiter === 'hyphen' ? 'selected' : '' ?>>hyphenate-words</option>
+								<option value="nospace" <?= $delimiter === 'nospace' ? 'selected' : '' ?>>nospaces</option>
+								<option value="space" <?= $delimiter === 'space' ? 'selected' : '' ?>>space words</option>
+							</select>
+
+							<select name="textTransform" class="form-control">
+								<option value="camel" <?= $textTransform === 'camel' ? 'selected' : '' ?>>camelCase</option>
+								<option value="upper" <?= $textTransform === 'upper' ? 'selected' : '' ?>>UPPERCASE</option>
+								<option value="lower" <?= $textTransform === 'lower' ? 'selected' : '' ?>>lowercase</option>
+								<option value="title" <?= $textTransform === 'title' ? 'selected' : '' ?>>Title Case</option>
+								<option value="sentence" <?= $textTransform === 'sentence' ? 'selected' : '' ?>>Sentence Case</option>
+							</select>
 						</div>
 						<div class="checkbox">
 							<label>
@@ -71,43 +84,20 @@
 							</label>
 						</div>
 
-						
-						<div class="form-group">
-							<label>
-							<select name="delimiter" class="form-control">
-								<option value="hyphen" <?= $delimiter === 'hyphen' ? 'selected' : '' ?>>hyphenate-words</option>
-								<option value="nospace" <?= $delimiter === 'nospace' ? 'selected' : '' ?>>nospaces</option>
-								<option value="space" <?= $delimiter === 'space' ? 'selected' : '' ?>>space words</option>
-							</select>
-							</label>
-						</div>
-
-						<div class="form-group">
-							<label>
-							<select name="textTransform" class="form-control">
-								<option value="camel" <?= $textTransform === 'camel' ? 'selected' : '' ?>>camelCase</option>
-								<option value="upper" <?= $textTransform === 'upper' ? 'selected' : '' ?>>UPPERCASE</option>
-								<option value="lower" <?= $textTransform === 'lower' ? 'selected' : '' ?>>lowercase</option>
-								<option value="title" <?= $textTransform === 'title' ? 'selected' : '' ?>>Title Case</option>
-								<option value="sentence" <?= $textTransform === 'sentence' ? 'selected' : '' ?>>Sentence Case</option>
-							</select>
-							</label>
-						</div>
-
-
-
-
-						<button type="submit" class="btn btn-default">Submit</button>
+						<button type="submit" class="btn btn-success">Generate New Password</button>
 					</form>
+				</div>
 
 
-
-
-
-
+				<div class="row">
+					<div class="col-sm-8 col-sm-offset-2 comic-column">
+						<a href="http://xkcd.com/936/" target="xkcd">
+							<img src="images/password_strength.png" alt="A webcomic describing how to make a strong password." class="img-responsive u-marginTop comic" />
+							xkcd webcomic: password strength
+						</a>
+					</div>
 				</div>
 			</div>
-
 
 			<footer>
 				<div class='copyright'>
@@ -115,10 +105,6 @@
 				</div>
 			</footer>
 		</main>
-		
 	</div>
-
-
 </body>
-
 </html>
