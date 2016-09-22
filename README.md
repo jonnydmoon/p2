@@ -4,7 +4,7 @@
 <http://p2.jonnymoon.com>
 
 ## Description
-This website allows users to generate random passwords. The passwords can be customized to include numbers, symbols, number of words, etc. The password generator is inspired by the xkcd comid <http://xkcd.com/936/>
+This website allows users to generate random passwords. The passwords can be customized to include numbers, symbols, number of words, etc. The password generator is inspired by the xkcd comic <http://xkcd.com/936/>.
 
 ## Demo
 <XXXXXXXXXXXXXXXXX>
@@ -17,3 +17,6 @@ The website is responsive. Added extra options for setting the delimiter, and co
 * Google Fonts: https://fonts.google.com/
 * Font Awesome: http://fontawesome.io/
 * Word List: http://www.wordfrequency.info/
+
+## Outside images
+* xkcd comic: http://xkcd.com/936/ 
