@@ -54,7 +54,7 @@ function validateInput($input){
 	$output['errors'] = [];
 
 	if(!is_numeric($numberOfWords) || $numberOfWords < 1 || $numberOfWords > 9){
-		$output['errors'][] = "Invalid number of words. Defaulting to 3 words";
+		$output['errors'][] = "Invalid number of words. Defaulting to 3 words.";
 		$numberOfWords = 3;
 	}
 
