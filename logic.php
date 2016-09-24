@@ -1,4 +1,4 @@
-<?
+<?php
 /*
 	Page: logic.php
 	Handles the logic for the password generator. 

@@ -37,9 +37,9 @@
 			<div class="row main-row">
 				<div class="col-sm-12">
 					
-					<? if($errors && $errors.length): ?>
+					<?php if($errors && $errors.length): ?>
 						<div class="alert alert-danger" role="alert"> <strong>Error</strong> <?= implode('<br /><strong>Error</strong> ', $errors) ?></div>
-					<? endif ?>
+					<?php endif ?>
 
 					<div class='password-holder'>
 						<h1 class="password"><?= $password ?></h1>
