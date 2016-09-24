@@ -2,7 +2,6 @@
 	require('logic.php');
 	extract($output); // Turn everything in output into a local variable.
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,7 +86,6 @@
 						<button type="submit" class="btn btn-success">Generate New Password</button>
 					</form>
 				</div>
-
 
 				<div class="row">
 					<div class="col-sm-8 col-sm-offset-2 comic-column">
